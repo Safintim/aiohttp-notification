@@ -25,4 +25,4 @@ config = {
 }
 
 FCM_SERVER_KEY = os.getenv('FCM_SERVER_KEY', 'token')
-TOKEN = os.getenv('TOKEN', 'token')
+NOTIFICATION_TOKEN = os.getenv('NOTIFICATION_TOKEN', 'token')

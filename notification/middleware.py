@@ -40,7 +40,7 @@ def token_auth_middleware(
         if auth_scheme.lower() != scheme.lower():
             raise web.HTTPForbidden(reason='Invalid token scheme')
 
-        if settings.TOKEN != token:
+        if settings.NOTIFICATION_TOKEN != token:
             raise web.HTTPForbidden(reason='Token doesnt exist')
 
         return await handler(request)
