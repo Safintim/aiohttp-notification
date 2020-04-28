@@ -3,6 +3,9 @@ import pathlib
 
 import yaml
 
+HOST = os.getenv('HOST', '0.0.0.0')
+PORT = os.getenv('PORT', '8003')
+
 BASE_DIR = pathlib.Path(__file__).parent
 config_path = BASE_DIR / 'config' / 'app.yaml'
 
@@ -14,15 +17,15 @@ def get_config(path):
 
 config = get_config(config_path)
 
-config = {
-    'postgres': {
-        'database': os.getenv('DB_NAME'),
-        'user': os.getenv('DB_USER'),
-        'password': os.getenv('DB_PASSWORD'),
-        'host': os.getenv('DB_HOST'),
-        'port': os.getenv('DB_PORT'),
-    },
-}
+# config = {
+#     'postgres': {
+#         'database': os.getenv('DB_NAME'),
+#         'user': os.getenv('DB_USER'),
+#         'password': os.getenv('DB_PASSWORD'),
+#         'host': os.getenv('DB_HOST'),
+#         'port': os.getenv('DB_PORT'),
+#     },
+# }
 
 FCM_SERVER_KEY = os.getenv('FCM_SERVER_KEY', 'token')
 NOTIFICATION_TOKEN = os.getenv('NOTIFICATION_TOKEN', 'token')
